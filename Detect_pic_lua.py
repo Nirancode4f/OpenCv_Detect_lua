@@ -91,7 +91,7 @@ while (1):
 
     contours, hierarchies = cv.findContours(dilate, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 
-    #
+    # abc
 
     # white remove
     bitwise = cv.bitwise_or(img, img, mask=thresh)
