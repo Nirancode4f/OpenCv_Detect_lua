@@ -17,10 +17,6 @@ cv.createTrackbar("max-H", "remmove_white", 201, 255, nothing)
 cv.createTrackbar("max-S", "remmove_white", 57, 255, nothing)
 cv.createTrackbar("max-V", "remmove_white", 255, 255, nothing)
 
-
-
-
-
 def remove_white(img):
 
     minH = cv.getTrackbarPos("min-H", "remmove_white")
@@ -35,14 +31,14 @@ def remove_white(img):
 
     hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
     cv.imshow("hsv", hsv)
+
     mask = cv.inRange(hsv, min, max)
 
     kernel = np.ones((3,3), np.uint8)
-
     ret, thresh = cv.threshold(mask, 127, 255, cv.THRESH_BINARY_INV)
+
     dilate = cv.dilate(thresh,(10,10), 3)
     opening = cv.morphologyEx(dilate, cv.MORPH_OPEN, kernel, iterations=2)
-
 
     bitwise = cv.bitwise_or(img, img, mask=opening)
     cv.imshow("bit9" , bitwise)
@@ -60,7 +56,6 @@ def remove_white(img):
 
     contours, hierarchies = cv.findContours(thresh2, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
 
-
     for cnt in contours:
         area = cv.contourArea(cnt)
         if area >= 50:
@@ -71,6 +66,3 @@ def remove_white(img):
     # cv.imshow("testting", img)
 
     return contours
-
-
-
