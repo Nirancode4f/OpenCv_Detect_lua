@@ -20,7 +20,7 @@ class Navigation:
 
     def detect_trees(self):
         # trees trees
-        trees_detect, trees_contours = tsd(img)
+        trees_detect, trees_contours = tsd(self.img)
         cv.imshow("trees detected", trees_detect)
 
 
