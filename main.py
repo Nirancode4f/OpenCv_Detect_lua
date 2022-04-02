@@ -1,25 +1,38 @@
-
+import sys
+sys.path.insert(0, "./Navigation_Center")
+sys.path.insert(0, "./Detect_file_packages")
 import numpy as np
 import cv2 as cv
 from resize_img import resize as rs
+from navigation_center import test
 
 
 # import img here
-img = "./Test_Data/lua.jpg"
-img = cv.imread(img)
+img = cv.imread("./Test_Data/lua.jpg")
+img = rs(img)
 
-# run this
+
+
 def main(img):
-    # asdfasdadsfasd
 
-    img = rs(img)
+    while True:
 
-    cv.imshow("nothing", img)
+        # remove_white
 
-    cv.waitKey(0)
+        test()
+
+        # remove_trees
+
+        # Detect_dameged_seeds
 
 
+        cv.imshow("nothing", img)
+        if cv.waitKey(20) & 0xFF == ord('d'):
+            break
+
+    cv.destroyAllWindows()
 
 
-if _name_ == "_name_":
+# start from here
+if __name__ == "__main__":
     main(img)
