@@ -14,21 +14,12 @@ def main(img):
 
     while True:
 
-        # remove_white
-        Navigation(img)
-
-
-        # remove_trees
-
-
-
-        # Detect_dameged_seeds
-
-
-
-
+        # use package here
+        gn = Navigation(img)
+        gn.detect_damege_seeds()
 
         cv.imshow("nothing", img)
+
         if cv.waitKey(20) & 0xFF == ord('d'):
             break
 
