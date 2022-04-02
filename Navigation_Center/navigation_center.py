@@ -11,7 +11,19 @@ from Detect_file_packages.white_background_detect import white_background_detect
 
 def Navigation(img):
 
-    dsd(img)
+    # # detect dameged seed
+    dame_seeds, contours = dsd(img)
+    cv.imshow(" damge seed", dame_seeds)
+
+    # # detect white
+    white_detect, white_contours = wbd(img)
+    cv.imshow("white detected", white_detect)
+
+    # trees
+    trees_detect, trees_contours = tsd(img)
+    cv.imshow("trees detected", trees_detect)
+    
+    
 
 
 
