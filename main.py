@@ -77,7 +77,7 @@ cv.destroyAllWindows()
 #
 # hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 #
-# cv.imshow("main", img)
+# cv.imshow("main.py", img)
 # cv.imshow("hsv",hsv)
 #
 # cv.waitKey(0)

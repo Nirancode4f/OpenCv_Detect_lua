@@ -36,7 +36,7 @@ while (1):
     mask = cv.inRange(hsv, min, max)
     canny = cv.Canny(mask, 60, 165, 3)
 
-    # cv.imshow("main", img)
+    # cv.imshow("main.py", img)
     cv.imshow("default", img)
     cv.imshow("main", hsv)
     cv.imshow("canny", canny)
